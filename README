@@ -3,7 +3,31 @@
 ===============================
 
 This project contains some material for a very short x86 64-bit assembler
-tutorial. It was created for a workshop at Oslo Hackerspace, in 2013
+tutorial. It was created for a workshop at Oslo Hackerspace, in Feb 2013.
+
+
+ How to compile
+================
+
+You need to have the Netwide Assembler (nasm) and gcc installed.
+
+
+# nasm -f elf64 program.asm
+# gcc -o program program.o
+
+for ass5
+
+# gcc -o sdlhello sdlhello.o -lSDL
+
+
+ How to debug
+==============
+
+You can use gdb. If you want to attach gdb to a running process (the -p option),
+you must ensure that your user has privileges to attach to other processes.
+
+# echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
 
 
  Karl Trygve Kalleberg <karltk near boblycat dot org>
