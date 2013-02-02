@@ -1,5 +1,8 @@
-- change printnum to accept a number argument (in a register) and print this 
-  instead of the hardcoded NUMBER
-- write a dump_regs function that writes all registers (rax, rbx, rcx, rdx, 
-  rdi, rsi, rbp, rsp) to screen, for debugging
+
+
+- change printnum to accept a number argument (in a register) and
+  print this instead of the hardcoded NUMBER
+- write a dump_regs function that writes all registers
+  (rax, rbx, rcx, rdx, rdi, rsi, rbp, rsp) 
+  to screen, for debugging
 
