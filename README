@@ -23,10 +23,14 @@ for ass5
  How to debug
 ==============
 
-You can use gdb. If you want to attach gdb to a running process (the -p option),
-you must ensure that your user has privileges to attach to other processes.
+You can use gdb, if you know how to handle it. If you want to attach gdb to a
+running process (the -p option), you must ensure that your user has privileges
+to attach to other processes.
 
 # echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
+
+After ass2, you'll have a dump_regs function that you can use for shotgun
+debugging.
 
 
 
