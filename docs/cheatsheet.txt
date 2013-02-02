@@ -1,0 +1,70 @@
+Registers
+=========
+
+ 64  32  8  8 (bits)	
+rax eax ah al
+rbx ebx bh bl
+rcx ecx bh bl
+rdx edx dh dl
+rdi edi
+rsi esi
+r8  r8d
+...
+r15 r15d
+
+Instructions
+============
+
+reg = register 
+mem = memory dereference
+imm = immediate (constant value)
+
+mov {reg, mem, imm}, {reg, mem, imm}
+cmp {reg, mem, imm}, {reg, mem, imm}
+add {reg, mem, imm}, {reg, mem, imm}
+sub {reg, mem, imm}, {reg, mem, imm}
+xor {reg, mem, imm}, {reg, mem, imm}
+and {reg, mem, imm}, {reg, mem, imm}
+or {reg, mem, imm}, {reg, mem, imm}
+call {reg, mem, imm}
+jmp imm
+push reg
+pop reg
+jz / jnz 
+ja / jae (above; unsigned)
+jg / jge (greater, signed)
+jb / jbe (below; unsigned)
+jl / jle (lesser, signed)
+
+
+Calling Conventions
+===================
+
+Arguments are passed in the following 64-bit registers, in order:
+
+	rdi rsi rdx rcx r8 r9 
+
+	
+Example:
+
+Let's say we have the C function
+
+	size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+it would be called (in C)
+
+	result = fwrite(ptr, size, nmemb, stream)
+
+and in x86_64 assembly
+
+	mov 	rdi, <ptr>
+	mov 	rsi, <size>
+        mov 	rdx, <nmemb>
+ 	mov 	rcx, <stream>
+	call	fwrite
+	mov	<result>, rax
+
+where all <??> are constants, registers or memory dereferences.
+
+
+When the function is a vararg function, the rax register should be cleared to zero (simplified explanation!).
