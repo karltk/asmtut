@@ -1,0 +1,19 @@
+- nasm syntax
+ - BITS
+ - SECTION
+ - EXTERN
+ - GLOBAL
+ - labels
+
+- program layout
+ - main
+
+- registers
+ - rax, rbx, rcx, rdx, rsi, rdi, rsp, rbp, r8-r15
+
+- basic instructions
+ - mov
+ - call
+ - ret
+ - xor
+

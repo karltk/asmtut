@@ -1,0 +1,19 @@
+- nasm syntax
+ - %define
+ - SECTION (data)
+
+- program layout
+ - splitting into functions
+
+- calling conventions
+ - x86_64 SysV
+
+- basic instructions
+ - mov
+ - add
+ - sub
+ - cmp
+ - ret
+ - xor
+
+ 

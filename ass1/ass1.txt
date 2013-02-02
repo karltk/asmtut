@@ -1,0 +1,4 @@
+- change the text to something else
+- make the program return an error code
+- convince printf to print a number from a register
+- use a system call to accomplish the same

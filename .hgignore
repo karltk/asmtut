@@ -1,5 +1,8 @@
 syntax: glob
 *~
 *.o
-hello
-sdlhello
+ass1/hello
+ass2/printnum
+ass3/loop
+ass4/pointers
+

@@ -1,0 +1,16 @@
+- nasm syntax
+ - (none)
+
+- program layout
+ - local labels
+
+- calling conventions
+ - stack frames
+
+- basic instructions
+ - cmp
+ - push
+ - pop
+ - jz / je / jl / jg / jnz / jne
+ - add
+ - sub

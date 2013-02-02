@@ -1,0 +1,20 @@
+- nasm syntax
+ - (none)
+
+- program layout
+ - (none)
+
+- registers
+ - al, ah, bl, bh, dl, dh, cl, ch
+
+- calling conventions
+ - unconventional stack frames
+
+- basic instructions
+ - cmp
+ - push
+ - pop
+ - jz / je / jb / jbe / jae / jnz / jne
+ - add
+ - sub
+ - memory operands

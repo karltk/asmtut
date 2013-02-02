@@ -1,0 +1,3 @@
+- change the loop to count from 0 to 10, printing every number
+- change the loop to print the number sequence (or a similar one) in reverse, from high to low
+

@@ -1,0 +1,1 @@
+- change printnum to accept a number argument (in a register) and print this instead of the hardcoded NUMBER
