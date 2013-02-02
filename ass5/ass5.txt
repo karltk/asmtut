@@ -1,1 +1,5 @@
 - invent other patterns
+- write a dump_regs function that writes all registers
+  (rax, rbx, rcx, rdx, rdi, rsi, rbp, rsp) 
+  to screen, for debugging, if you haven't already
+
