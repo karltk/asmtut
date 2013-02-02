@@ -1,0 +1,15 @@
+- nasm syntax
+ - (none)
+
+- program layout
+ - (none)
+
+- registers
+ - (none)
+
+- calling conventions
+ - (none)
+
+- basic instructions
+ - movzx
+ - lea
