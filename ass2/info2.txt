@@ -1,6 +1,6 @@
 - nasm syntax
- - %define
- - SECTION (data)
+ - %define FOO 12
+ - SECTION .data
 
 - program layout
  - splitting into functions
@@ -12,8 +12,6 @@
  - mov
  - add
  - sub
- - cmp
+ - call
  - ret
  - xor
-
- 

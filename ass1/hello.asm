@@ -5,11 +5,11 @@
   SECTION .text
 
 main:
-  mov   rdi, message
+  mov   rdi, message                ; this is a comment
   xor   rax, rax
   call  printf
 
-  xor   eax,eax
+  xor   rax,rax
   ret
 
 message:
