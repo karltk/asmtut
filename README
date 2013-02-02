@@ -1,0 +1,10 @@
+
+ x86 64-bit assembler tutorial
+===============================
+
+This project contains some material for a very short x86 64-bit assembler
+tutorial. It was created for a workshop at Oslo Hackerspace, in 2013
+
+
+ Karl Trygve Kalleberg <karltk near boblycat dot org>
+ Ole André Vadla Ravnås <ole.andre.ravnas near tillitech dot com>
