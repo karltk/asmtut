@@ -1,7 +1,7 @@
 Registers
 =========
 
- 64  32  8  8 (bits)	
+ 64  32  8  8 (bits)
 rax eax ah al
 rbx ebx bh bl
 rcx ecx bh bl
@@ -15,56 +15,68 @@ r15 r15d
 Instructions
 ============
 
-reg = register 
+reg = register
+      rax, rbx, ....
 mem = memory dereference
+      [name_of_variable]
 imm = immediate (constant value)
+      0x1234 or .target
 
-mov {reg, mem, imm}, {reg, mem, imm}
-cmp {reg, mem, imm}, {reg, mem, imm}
-add {reg, mem, imm}, {reg, mem, imm}
-sub {reg, mem, imm}, {reg, mem, imm}
-xor {reg, mem, imm}, {reg, mem, imm}
-and {reg, mem, imm}, {reg, mem, imm}
-or {reg, mem, imm}, {reg, mem, imm}
-call {reg, mem, imm}
-jmp imm
-push reg
-pop reg
-jz / jnz 
-ja / jae (above; unsigned)
-jg / jge (greater, signed)
-jb / jbe (below; unsigned)
-jl / jle (lesser, signed)
+mov  {reg, mem, imm}, {reg, mem, imm} - mov
+cmp  {reg, mem, imm}, {reg, mem, imm} - compare
+add  {reg, mem, imm}, {reg, mem, imm} - arithmetic addition
+sub  {reg, mem, imm}, {reg, mem, imm} - arithmetic subtraction
+xor  {reg, mem, imm}, {reg, mem, imm} - bitwise xor
+and  {reg, mem, imm}, {reg, mem, imm} - bitwise and
+or   {reg, mem, imm}, {reg, mem, imm} - bitwise or
+call {reg, mem, imm}                  - call function
+inc  {reg, mem}                       - increase by 1
+dec  {reg, mem}                       - decrease by 1
+jmp  {reg, imm, mem}                  - jump to target (imm = label)
+push reg                              - push register on stack
+pop  reg                              - pop register from stack
+jz / jnz                              - jump if/not zero
+ja / jae (above; unsigned)            - jump if above/above equal
+jg / jge (greater, signed)            - jump if greater/greater or equal
+jb / jbe (below; unsigned)            - jump if below/below or equal
+jl / jle (less, signed)               - jump if less/less or equal
 
 
 Calling Conventions
 ===================
 
-Arguments are passed in the following 64-bit registers, in order:
 
-	rdi rsi rdx rcx r8 r9 
+* Arguments are passed in the following 64-bit registers, in order:
 
-	
+  rdi rsi rdx rcx r8 r9
+
+* For vararg functions, the rax register should be cleared to zero
+  (simplified explanation!).
+
+* The stack must be aligned to 16 (bytes), i.e. esp must be divisible by 16
+  at the call instruction in the caller (calling function).
+
+
 Example:
 
 Let's say we have the C function
 
-	size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+  size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
 
 it would be called (in C)
 
-	result = fwrite(ptr, size, nmemb, stream)
+  result = fwrite(ptr, size, nmemb, stream)
 
 and in x86_64 assembly
 
-	mov 	rdi, <ptr>
-	mov 	rsi, <size>
-        mov 	rdx, <nmemb>
- 	mov 	rcx, <stream>
-	call	fwrite
-	mov	<result>, rax
+  mov   rdi, <ptr>
+  mov   rsi, <size>
+  mov   rdx, <nmemb>
+  mov   rcx, <stream>
+  call  fwrite
+  mov   <result>, rax
 
 where all <??> are constants, registers or memory dereferences.
 
 
-When the function is a vararg function, the rax register should be cleared to zero (simplified explanation!).
+
